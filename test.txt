@@ -1,0 +1,10 @@
+python -u tools/eval.py -c configs/faster_rcnn_r50_1x.yml \
+                      -o weights=output/yolov3_mobilenet_v1_fruit/model_final \
+
+
+
+ python -u tools/infer.py -c configs/yolov3_mobilenet_v1_fruit.yml \
+                    --infer_img=demo/000000570688.jpg \
+                    --output_dir=infer_output/ \
+                    --draw_threshold=0.5 \
+                    -o weights=output/yolov3_mobilenet_v1_fruit/model_final/model_final                     

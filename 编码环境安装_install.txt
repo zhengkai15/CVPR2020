@@ -1,0 +1,17 @@
+cat /usr/local/cuda/include/cudnn.h | grep CUDNN_MAJOR -A 2 
+wget http://10.9.0.146:8888/group1/M00/00/05/CgkAa18fv5iESKseAAAAACZb8dk7111.gz 
+tar -zxvf CgkAa18fv5iESKseAAAAACZb8dk7111.gz 
+sudo rm -rf /usr/local/cuda/include/cudnn.h 
+cd cuda 
+cp include/cudnn.h /usr/local/cuda/include/ 
+cp lib64/lib* /usr/local/cuda/lib64/ 
+cd /usr/local/cuda/lib64/ 
+chmod +r libcudnn.so.7.6.0  
+ln -sf libcudnn.so.7.6.0 libcudnn.so.7 
+ln -sf libcudnn.so.7 libcudnn.so    
+ldconfig  
+
+
+python dataset/fruit/download_fruit.py 
+python3.6 -m pip install paddlepaddle-gpu==1.8.3.post107 -i https://mirror.baidu.com/pypi/simple
+python3.6 -m pip install -i https://mirrors.aliyun.com/pypi/simple -r /project/train/src_repo/requirements.txt

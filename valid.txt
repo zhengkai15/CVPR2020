@@ -1,0 +1,7 @@
+python -u tools/infer.py -c configs/faster_rcnn_r50_fpn_1x.yml \
+              --infer_img=/project/train/src_repo/dataset/images/valid/2314a93.jpg \
+              --output_dir=/project/test/infer_output
+
+python -u tools/infer.py -c configs/faster_rcnn_r50_fpn_1x.yml \
+              --infer_img=/project/train/src_repo/dataset/images/train/1014a38.jpg \
+              --output_dir=/project/test/infer_output
